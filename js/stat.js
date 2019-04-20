@@ -35,8 +35,6 @@ window.renderStatistics = function (ctx, players, times) {
   var maxTime = getMaxElement(times);
 
   for (var i = 0; i < players.length; i++) {
-    // var a = parseInt(Math.random().toFixed(1), 10);
-    // var roundedCloudHeight = Math.round(CLOUD_HEIGHT - GAP - FONT_HEIGHT - GAP - (BAR_HEIGHT * times[i]) / maxTime - GAP);
     if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
