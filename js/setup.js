@@ -2,7 +2,6 @@
 function makeElementVisible(cssClass) {
   document.querySelector(cssClass).classList.remove('hidden');
 }
-// makeElementVisible('.setup');
 var similarListElement = document.querySelector('.setup-similar-list');
 
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
@@ -58,7 +57,6 @@ var wizardCoatColor = document.querySelector('.setup-wizard .wizard-coat');
 var wizardEyesColor = document.querySelector('.setup-wizard .wizard-eyes');
 var wizardFireballColor = document.querySelector('.setup-fireball-wrap');
 var fireballColors = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
-console.log(wizardFireballColor);
 
 wizardCoatColor.addEventListener('click', function() {
   var coatColor = 'fill: ' + getRandomArrayValue(coatColors);
@@ -71,14 +69,11 @@ wizardEyesColor.addEventListener('click', function() {
 });
 
 wizardFireballColor.addEventListener('click', function() {
-  var fireballColor = 'fill: ' + getRandomArrayValue(fireballColors);
-  // console.log(wizardFireballColor.getAttribute('background'));
-  wizardFireballColor.setAttribute('background', fireballColor);
+  var fireballColor = 'background: ' + getRandomArrayValue(fireballColors);
+  wizardFireballColor.setAttribute('style', fireballColor);
 });
 
-
 var onPopupEscPress = function(evt) {
-
   if (evt.keyCode === ESC_KEYCODE && evt.target !== setupUserName) {
     closePopup();
   }
@@ -114,10 +109,6 @@ setupClose.addEventListener('keydown', function(evt) {
   }
 });
 
-// document.querySelectorAll('input')[1].setAttribute('minlength', '2');
-
-
-
 /**
  * Функция, возвращающая случайное значение из массива
  * @param {array} arr Массив
@@ -151,9 +142,4 @@ userNameInput.addEventListener('input', function (evt) {
   }
 });
 
-
-var submitButton = document.querySelector('.setup-submit');
-submitButton.addEventListener('click', function(evt) {
-  evt. = 'https://js.dump.academy/code-and-magick';
-  console.log('hello');
-});
+document.querySelector('.setup-wizard-form').setAttribute('action', 'https://js.dump.academy/code-and-magick');
